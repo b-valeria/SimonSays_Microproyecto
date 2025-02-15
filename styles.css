@@ -1,0 +1,50 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #a8a8a8;
+ }
+ 
+ #menu {
+    text-align: center;
+ }
+ 
+ .button-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los botones se envuelvan en varias filas */
+    width: 220px; /* Ajusta el ancho según el tamaño de los botones */
+    margin: 20px auto; /* Centra el contenedor */
+ }
+ 
+ .color-button {
+    width: 100px; /* Ancho de cada botón */
+    height: 100px; /* Alto de cada botón */
+    margin: 5px; /* Espacio entre botones */
+    border-radius: 10px;
+    opacity: 0.7;
+    cursor: pointer;
+ }
+ 
+ #red {
+    background-color: red;
+ }
+ 
+ #green {
+    background-color: green;
+ }
+ 
+ #blue {
+    background-color: blue;
+ }
+ 
+ #yellow {
+    background-color: rgb(247, 247, 100);
+ }
+ 
+ .color-button.active {
+    background-color: black; /* Cambia el color a negro */
+    opacity: 1;
+ }
+ 
