@@ -3,7 +3,6 @@ let playerSequence = [];
 let score = 0;
 let username = '';
 
-
 const colors = ["red", "green", "blue", "yellow"];
 const audioFiles = {
    red: new Audio('audio/do-80236.mp3'),
@@ -12,10 +11,8 @@ const audioFiles = {
    yellow: new Audio('audio/re-78500.mp3'),
 };
 
-
 document.getElementById('start').addEventListener('click', startGame);
-document.getElementById('restart').addEventListener('click', restartGame);
-
+document.getElementById('restart').addEventListener('click', restartGame); // Solo evento para el botón de reinicio
 
 function startGame() {
    username = document.getElementById('username').value;
@@ -28,14 +25,12 @@ function startGame() {
    nextRound();
 }
 
-
 function nextRound() {
    playerSequence = [];
    const randomColor = colors[Math.floor(Math.random() * colors.length)];
    sequence.push(randomColor);
    playSequence();
 }
-
 
 function playSequence() {
    let i = 0;
@@ -49,7 +44,6 @@ function playSequence() {
    }, 1000); // Intervalo de 1 segundo
 }
 
-
 function saveScore() {
    let scores = JSON.parse(localStorage.getItem('scores')) || {};
    if (!scores[username]) {
@@ -61,7 +55,6 @@ function saveScore() {
    localStorage.setItem('scores', JSON.stringify(scores));
 }
 
-
 function illuminateButton(color) {
    const button = document.getElementById(color);
    button.classList.add('active');
@@ -71,7 +64,6 @@ function illuminateButton(color) {
    }, 500); // Cambia a 500 ms para que el botón se ilumine por medio segundo
 }
 
-
 document.querySelectorAll('.color-button').forEach(button => {
    button.addEventListener('click', () => {
        const color = button.id;
@@ -80,9 +72,6 @@ document.querySelectorAll('.color-button').forEach(button => {
        checkSequence();
    });
 });
-
-
-
 
 function checkSequence() {
    const lastIndex = playerSequence.length - 1;
@@ -97,7 +86,6 @@ function checkSequence() {
    }
 }
 
-
 function restartGame() {
    sequence = [];
    score = 0;
@@ -106,9 +94,7 @@ function restartGame() {
    document.getElementById('game').style.display = 'none';
 }
 
-
 document.getElementById('showVictories').addEventListener('click', showScores);
-
 
 function showScores() {
    const scores = JSON.parse(localStorage.getItem('scores')) || {};
@@ -118,16 +104,3 @@ function showScores() {
    }
    alert(scoreList);
 }
-
-
-function saveScore() {
-   let scores = JSON.parse(localStorage.getItem('scores')) || {};
-   if (!scores[username]) {
-       scores[username] = 0;
-   }
-   if (score > scores[username]) {
-       scores[username] = score;
-   }
-   localStorage.setItem('scores', JSON.stringify(scores));
-}
-

@@ -5,46 +5,52 @@ body {
     justify-content: center;
     height: 100vh;
     background-color: #a8a8a8;
- }
+}
  
- #menu {
+#menu {
     text-align: center;
- }
+}
  
- .button-container {
+.button-container {
     display: flex;
     flex-wrap: wrap; /* Permite que los botones se envuelvan en varias filas */
     width: 220px; /* Ajusta el ancho según el tamaño de los botones */
     margin: 20px auto; /* Centra el contenedor */
- }
+}
  
- .color-button {
+.color-button {
     width: 100px; /* Ancho de cada botón */
     height: 100px; /* Alto de cada botón */
     margin: 5px; /* Espacio entre botones */
     border-radius: 10px;
     opacity: 0.7;
     cursor: pointer;
- }
+}
  
- #red {
+#red {
     background-color: red;
- }
+}
  
- #green {
+#green {
     background-color: green;
- }
+}
  
- #blue {
+#blue {
     background-color: blue;
- }
+}
  
- #yellow {
+#yellow {
     background-color: rgb(247, 247, 100);
- }
+}
  
- .color-button.active {
+.color-button.active {
     background-color: black; /* Cambia el color a negro */
     opacity: 1;
- }
- 
+}
+
+#restart {
+    margin-top: 20px; /* Espacio entre el botón de reinicio y los demás elementos */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de fuente */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+}
